@@ -4,13 +4,13 @@
 fn reverse_words(str: &str) -> String {
     let mut res = String::new();
     str.split(" ")
-       .map(|x| {
-           res.extend(x.chars().rev().chain(Some(' ')));
-       }).count();
+        .map(|x| {
+            res.extend(x.chars().rev().chain(Some(' ')));
+        })
+        .count();
     res.pop();
     res
 }
-
 
 fn main() {
     let s = "big apple";
@@ -20,8 +20,14 @@ fn main() {
 // Rust tests
 #[test]
 fn sample_test() {
-  assert_eq!(reverse_words("The quick brown fox jumps over the lazy dog."), "ehT kciuq nworb xof spmuj revo eht yzal .god");
-  assert_eq!(reverse_words("apple"), "elppa");
-  assert_eq!(reverse_words("a b c d"),"a b c d");
-  assert_eq!(reverse_words("double  spaced  words"), "elbuod  decaps  sdrow");
+    assert_eq!(
+        reverse_words("The quick brown fox jumps over the lazy dog."),
+        "ehT kciuq nworb xof spmuj revo eht yzal .god"
+    );
+    assert_eq!(reverse_words("apple"), "elppa");
+    assert_eq!(reverse_words("a b c d"), "a b c d");
+    assert_eq!(
+        reverse_words("double  spaced  words"),
+        "elbuod  decaps  sdrow"
+    );
 }

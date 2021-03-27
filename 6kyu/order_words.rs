@@ -2,19 +2,19 @@
 // Your order, please
 
 fn order(sentence: &str) -> String {
-  let mut s = sentence
-      .split_whitespace()
-      .collect::<Vec<&str>>();
+    let mut s = sentence.split_whitespace().collect::<Vec<&str>>();
 
-  s.sort_by_cached_key(|x| 
-    *x.as_bytes().get(
-      x.find(|c: char| c.is_ascii_digit()).unwrap()).unwrap());
-  s.join(" ")
+    s.sort_by_cached_key(|x| {
+        *x.as_bytes()
+            .get(x.find(|c: char| c.is_ascii_digit()).unwrap())
+            .unwrap()
+    });
+    s.join(" ")
 }
 
 fn main() {
-  let s = "is2 Thi1s T4est 3a";
-  println!("order({}) = {}", s, order(s));
+    let s = "is2 Thi1s T4est 3a";
+    println!("order({}) = {}", s, order(s));
 }
 
 #[cfg(test)]

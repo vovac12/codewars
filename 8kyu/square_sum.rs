@@ -2,7 +2,7 @@
 // Square(n) Sum
 
 fn square_sum(vec: Vec<i32>) -> i32 {
-    vec.iter().map(|x| x*x).sum()
+    vec.iter().map(|x| x * x).sum()
 }
 
 fn main() {

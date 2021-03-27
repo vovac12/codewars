@@ -5,7 +5,6 @@ fn is_prime(x: i64) -> bool {
     x >= 2 && !(2..((x as f64).sqrt() as i64 + 1)).any(|y| x % y == 0)
 }
 
-
 fn main() {
     println!("Is prime(777) = {}", is_prime(777));
 }
@@ -13,7 +12,7 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn basic_tests() {
         assert!(!is_prime(0), "0 is not prime");

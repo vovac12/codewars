@@ -13,11 +13,12 @@ fn my_first_interpreter(code: &str) -> String {
     res
 }
 
-
 fn main() {
-    println!("Result: {}", my_first_interpreter("++++++++++++++++++.++++."));
+    println!(
+        "Result: {}",
+        my_first_interpreter("++++++++++++++++++.++++.")
+    );
 }
-
 
 #[cfg(test)]
 mod tests {
