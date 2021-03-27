@@ -1,0 +1,71 @@
+[package]
+name = "codewars"
+version = "0.1.0"
+authors = ["Vladimir Stepanenko <vovac12@gmail.com>"]
+edition = "2018"
+
+[[bin]]
+name = "square_into_squares"
+path = "4kyu/square_into_squares.rs"
+
+[[bin]]
+name = "number_of_integer_partitions"
+path = "4kyu/number_of_integer_partitions.rs"
+
+[[bin]]
+name = "algebraic_lists"
+path = "4kyu/algebraic_lists.rs"
+
+[[bin]]
+name = "paintfuck"
+path = "4kyu/paintfuck.rs"
+
+[[bin]]
+name = "snail_sort"
+path = "4kyu/snail_sort.rs"
+
+[[bin]]
+name = "range_extraction"
+path = "4kyu/range_extraction.rs"
+
+[[bin]]
+name = "decode_morse_advanced"
+path = "4kyu/decode_morse_advanced.rs"
+
+[[bin]]
+name = "is_prime"
+path = "6kyu/is_prime.rs"
+
+[[bin]]
+name = "ministringfuck"
+path = "6kyu/ministringfuck.rs"
+
+[[bin]]
+name = "order_words"
+path = "6kyu/order_words.rs"
+
+[[bin]]
+name = "find_middle_element"
+path = "7kyu/find_middle_element.rs"
+
+[[bin]]
+name = "high_and_low"
+path = "7kyu/high_and_low.rs"
+
+[[bin]]
+name = "largest_five_digit_number"
+path = "7kyu/largest_five_digit_number.rs"
+
+[[bin]]
+name = "people_in_bus"
+path = "7kyu/people_in_bus.rs"
+
+[[bin]]
+name = "reverse_words"
+path = "7kyu/reverse_words.rs"
+
+[[bin]]
+name = "square_sum"
+path = "8kyu/square_sum.rs"
+
+[dependencies]
