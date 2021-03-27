@@ -3,7 +3,7 @@
 
 mod solution {
     pub fn range_extraction(a: &[i32]) -> String {
-        if a.len() == 0 {
+        if a.is_empty() {
             return "".to_string();
         }
         let mut res = String::new();

@@ -57,8 +57,8 @@ impl Programm {
         let range = (0..=idx).rev();
         for i in range {
             match self.code.get(i)? {
-                &Command::JumpBack => depth = depth.wrapping_add(1),
-                &Command::JumpForward => {
+                Command::JumpBack => depth = depth.wrapping_add(1),
+                Command::JumpForward => {
                     depth = depth.wrapping_sub(1);
                     if depth == 0 {
                         return Some(i);
@@ -75,8 +75,8 @@ impl Programm {
         let range = idx..self.code.len();
         for i in range {
             match self.code.get(i)? {
-                &Command::JumpForward => depth = depth.wrapping_add(1),
-                &Command::JumpBack => {
+                Command::JumpForward => depth = depth.wrapping_add(1),
+                Command::JumpBack => {
                     depth = depth.wrapping_sub(1);
                     if depth == 0 {
                         return Some(i);
@@ -114,10 +114,10 @@ impl Programm {
                     p.1 = p.1.wrapping_add(self.width).wrapping_sub(1) % self.width
                 }
                 Command::MoveRight => p.1 = p.1.wrapping_add(1) % self.width,
-                Command::JumpForward if *data.get(p.0)?.get(p.1)? == false => {
+                Command::JumpForward if !(*data.get(p.0)?.get(p.1)?) => {
                     idx = self.forward_bracket(idx)?;
                 }
-                Command::JumpBack if *data.get(p.0)?.get(p.1)? == true => {
+                Command::JumpBack if *data.get(p.0)?.get(p.1)? => {
                     idx = self.back_bracket(idx)?;
                 }
                 _ => (),

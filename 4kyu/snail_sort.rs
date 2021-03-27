@@ -1,5 +1,5 @@
 fn snail(matrix: &[Vec<i32>]) -> Vec<i32> {
-    if matrix.len() == 0 || matrix[0].len() == 0 {
+    if matrix.is_empty() || matrix[0].is_empty() {
         return vec![];
     }
     let mut lb = 0usize;

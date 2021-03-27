@@ -13,8 +13,8 @@ impl<T: Clone> Cons<T> {
 impl<T: Clone> Cons<T> {
     pub fn to_vec(&self) -> Vec<T> {
         match self {
-            &Cons::Null => vec![],
-            &Cons::Cons(ref head, ref tail) => {
+            Cons::Null => vec![],
+            Cons::Cons(ref head, ref tail) => {
                 let mut head = vec![head.clone()];
                 head.extend(tail.to_vec());
                 head

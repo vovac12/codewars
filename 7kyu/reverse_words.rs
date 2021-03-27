@@ -3,11 +3,9 @@
 
 fn reverse_words(str: &str) -> String {
     let mut res = String::new();
-    str.split(" ")
-        .map(|x| {
-            res.extend(x.chars().rev().chain(Some(' ')));
-        })
-        .count();
+    str.split(' ').for_each(|x| {
+        res.extend(x.chars().rev().chain(Some(' ')));
+    });
     res.pop();
     res
 }

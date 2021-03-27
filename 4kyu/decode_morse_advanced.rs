@@ -66,7 +66,7 @@ impl MorseDecoder {
         };
         let unit = encoded
             .split('0')
-            .filter_map(|x| if x.len() > 0 { Some(x.len()) } else { None })
+            .filter_map(|x| if !x.is_empty() { Some(x.len()) } else { None })
             .min()
             .unwrap();
         let mut count = 0;
@@ -102,7 +102,7 @@ impl MorseDecoder {
         encoded
             .split("   ")
             .map(move |x| {
-                x.split(" ")
+                x.split(' ')
                     .map(move |x| self.morse_code.get(x).unwrap().to_string())
                     .collect::<Vec<String>>()
                     .join("")

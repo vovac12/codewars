@@ -5,7 +5,7 @@ use std::i32;
 
 fn high_and_low(numbers: &str) -> String {
     let (max, min) = numbers
-        .split(" ")
+        .split(' ')
         .map(|x| x.parse::<i32>().unwrap())
         .fold((i32::MIN, i32::MAX), |x, y| (x.0.max(y), x.1.min(y)));
     format!("{} {}", max, min)
